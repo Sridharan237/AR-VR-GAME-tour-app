@@ -1,0 +1,1 @@
+This is an application like blog platform but it is a AR, VR gametour web application using react-ts.
