@@ -14,5 +14,12 @@ compatibility_date = "2023-12-01"
 
 # [[d1_databases]]
 # binding = "DB"
-# database_name = "my-database"
+# database_name = ""
 # database_id = ""
+
+#[[d1_databases]]
+#binding = "DB"
+#database_name = "experienceapp"
+#database_id = "44fa0c44-f943-460b-9b11-500f26a45714"
+
+d1_databases = [{binding="DB", database_name = "experienceapp", database_id = "44fa0c44-f943-460b-9b11-500f26a45714"}]
