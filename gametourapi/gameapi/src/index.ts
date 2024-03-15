@@ -1,5 +1,7 @@
 //gametourapi - using cloudflare d1 database
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
+import { nanoid } from 'nanoid'
 
 type Bindings = {
   DB:D1Database;
@@ -74,8 +76,39 @@ type communitychat = {
   user_id:string;
 }
 
+app.use('*', async (c, next) => {
+
+  const corsMiddleware = cors({
+    origin:['http://localhost:5173', 'https://'],
+    allowHeaders:['Origin', 'Content-Type', 'Authorization'],
+    allowMethods:['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    credentials: true,
+  })
+})
 app.get('/', (c) => {
   return c.text('Hello Hono!')
+})
+ 
+//login
+app.get('/login', async (c) => {
+  const login = await c.env.DB.prepare('SELECT * FROM user WHERE email = ? and password = ?').bind().run()
+
+  if(login)
+    return c.text("login successful")
+  else
+    return c.text("login unsuccessful") 
+})
+
+//signup
+app.post('/signup', async (c) => {
+
+  const userId = nanoid(6)
+
+  const current_date = Date.now()
+
+  const created_at = current_date.toLocaleString();
+
+  const {success} = await c.env.DB.prepare('INSERT INTO user VALUES (user_id, username, email, password, profile_picture, created_at, created_by, status)').bind(userId, username, email, password, profile_picture, created_at, status).run()
 })
 
 //User

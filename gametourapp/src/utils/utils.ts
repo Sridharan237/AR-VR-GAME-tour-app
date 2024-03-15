@@ -1,6 +1,6 @@
-// this is for using conditional tailwind using the below class
+//this util dependency is used for conditionally merging class names
+//tailwind classnames merger
 
-//tailwindcss classnames merger
 export const cn = (...classes: string[]) => {
-    return classes.filter(Boolean).join(' ');
+    return classes.filter(Boolean).join(' ')
 }
