@@ -1,5 +1,5 @@
 import React from 'react'
-import AllExperiences from './AllExperiences'
+import AllExperiences from './AllExperience'
 
 export default function Home() {
   return (

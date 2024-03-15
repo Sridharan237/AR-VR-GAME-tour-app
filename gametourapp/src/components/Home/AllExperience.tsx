@@ -1,11 +1,10 @@
 import React from 'react'
 import BackButton from '../Buttons/BackButton'
+import { Link } from 'react-router-dom'
 
 export default function AllExperiences() {
 
-  
   return (
-    <div>
         <div className="relative -mt-14 mb-2 h-screen w-full bg-slate-300">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu_mRm0L_Qu_3yn3_WABurW3Rate-_MnXxB6eUZH2k0p4rekjTgbSLohj_Yts5Gn454A&s" alt="" className="absolute inset-0 z-0 mt-16 h-full w-full" />
 
@@ -19,8 +18,8 @@ export default function AllExperiences() {
     <input type="text" placeholder='search experiences' className='flex items-center justify-start mt-20 py-3 px-16 rounded-md' />
   </div>
 
-    <button className="absolute right-2 top-5 rounded-full bg-green-500 p-2 font-semibold">Add Experience</button>
-
+  <Link to="/addExperience"><button className="absolute right-2 top-5 rounded-full bg-green-500 p-2 font-semibold">Add Experience</button></Link>
+    
     <div className='mt-2 flex items-center justify-center'>
     <div className="mt-12 grid h-screen w-7/12 overflow-y-auto">
       <div className="row-span-2 ml-4 flex flex-col">
@@ -115,8 +114,7 @@ export default function AllExperiences() {
       </div>
     </div>
   </div>
-</div>
-    </div>
+  </div>
 </div>
   )
 }

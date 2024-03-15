@@ -22,9 +22,9 @@ export default function Community() {
         </div>
       </aside>
     </div>
-    <div className="absolute right-24 top-4 flex h-screen items-center">
+    <div className="absolute right-60 bottom-20 flex h-screen items-center">
       <div className="ml-12 flex flex-col">
-        <div className="mb-4">All Communities</div>
+        <div className="mb-4 text-black font-semibold text-lg">All Communities</div>
         <input placeholder="Search community ..." className="mb-4 mt-2 rounded-lg" />
 
         <div className="flex h-96 w-auto flex-col overflow-y-scroll">
@@ -44,7 +44,7 @@ export default function Community() {
     </div>
   </div>
 </div>
-    </div>
+</div>
 
   )
 }

@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Home from '../Home/Home'
 import Community from '../Community/Community'
 import UserProfile from '../UserProfile/UserProfile'
+import AddExperience from '../Home/AddExperience'
 
 export default function Navbar() {
   const [isLoggedIn, setLogin] = useState<boolean>(false)
@@ -56,6 +57,7 @@ export default function Navbar() {
           <Route path="/Home" Component={Home} />
           <Route path="/Community" Component={Community} />
           <Route path="/UserProfile" Component={UserProfile} />
+          <Route path="/addExperience" Component={AddExperience} />
         </Routes>
 </BrowserRouter>
   )

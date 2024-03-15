@@ -1,19 +1,30 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function AddExperience() {
+
+  // Use this hook to programmatically navigate to another page
+  const navigate = useNavigate();
+
+  // This function is used to navigate to the home page
+  // It will be called when the button is clicked
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
         <div className="flex flex-col items-center h-screen bg-[#efe8e8] bg-[url('https://images.shiksha.com/mediadata/shikshaOnline/mailers/2021/naukri-learning/oct/27oct-v2/AR-VR-and-Gaming.jpg')] shadow-black ">
   <div className="w-full flex items-center justify-center font-bold text-white font-serif text-2xl">
   <h1>Add Experience</h1>
-  
-</div >
+</div>
 <div className=" relative h-full w-7/12 bg-[#a0a2bc] mt-8 flex flex-col gap-y-16  items-center justify-center rounded-xl gap-6 mb-8 ">
 <div>
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className=" absolute left-2 top-2 hover:text-red-500 bg-white  rounded-2xl hover:bg-orange-200 lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+<h1 className="w-full flex items-center justify-center font-bold text-black font-serif text-2xl">Add Experience</h1>
+<button onClick={goBack} className='px-3 py-1 absolute left-2 top-2 bg-green-500 hover:bg-yellow-500 rounded-md font-semibold'>Back</button>
 </div>
 
-<div className="  flex flex-row gap-4  ml-8 mt-10">
+<div className= "flex flex-row gap-4  ml-8 mt-10">
     <label className="text-xl">Image url :</label>
     <input type="text" className="px-20 rounded-md" />
 </div>
